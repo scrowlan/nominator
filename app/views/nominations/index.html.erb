@@ -1,0 +1,30 @@
+<div class="row">
+  <h1 class="text-center">All Nominations</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nominee</th>
+          <th>Reason</th>
+          <th>Nominator</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @nominations.each do |nomination| %>
+          <tr>
+            <td><%= nomination.employee.name %></td>
+            <td><%= nomination.reason %></td>
+            <td><%= nomination.nominator %></td>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+

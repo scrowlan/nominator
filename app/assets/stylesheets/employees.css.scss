@@ -1,0 +1,22 @@
+// Place all the styles related to the employees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.employee-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+.name-bar {
+  background-color: rgba(0, 0, 0, .8);
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.employee-name {
+  color: #fff;
+}

@@ -1,0 +1,21 @@
+<div class="row">
+  <h1 class="text-center">Lightsaber Award</h1>
+</div>
+
+<% @employees.each_slice(4) do |slice| %>
+  <div class="row" style="margin-bottom: 30px">
+    <% slice.each do |employee| %>
+      <div class="col-md-3">
+        <%= link_to employee  do %>
+          <div class="employee-bg" style="background-image: url(<%= employee.employee_image.to_s %>); height: 300px">
+            <div class="name-bar">
+                <div class="text-center employee-name">
+                  <%= employee.name %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
