@@ -1,5 +1,5 @@
 <div class="row">
-  <h1 class="text-center"><%= @employee.fname %> <%= @employee.lname %></h1>
+  <h2 class="text-center"><%= @employee.fname %> <%= @employee.lname %></h2>
 </div>
 
 <div class="row">
@@ -22,6 +22,9 @@
       <div class="actions">
         <%= f.submit 'Nominate', :class => 'btn btn-primary form-control' %>
       </div>
+      <% if signed_in? %>
+        <%= link_to "Edit", edit_employee_path, :class => 'btn btn-primary form-control' %>
+      <% end %>
     <% end %>
   </div>
 </div>
