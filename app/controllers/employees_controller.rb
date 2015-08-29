@@ -11,9 +11,9 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
-    @employee = Employee.find(params[:id])
+    @employee = Employee.friendly.find(params[:id])
     @nomination = Nomination.new
-    @nominations = Nomination.where(:employee_id => params[:id])
+    @nominations = @employee.nominations
   end
 
   # GET /employees/new
@@ -68,12 +68,12 @@ class EmployeesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
-      @employee = Employee.find(params[:id])
+      @employee = Employee.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params[:employee].permit(:fname, :lname, :employee_image)
+      params[:employee].permit(:fname, :lname, :employee_image, :full_name, :slug)
     end
 
 end

@@ -44,6 +44,9 @@ gem 'carrierwave_direct'
 #for easy processing of quality etc of uploads
 gem 'carrierwave-processing'
 
+# for friendly slugs
+gem 'friendly_id', '~> 5.1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
