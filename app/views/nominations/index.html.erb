@@ -16,7 +16,7 @@
       <tbody>
         <% @nominations.each do |nomination| %>
           <tr>
-            <td><%= nomination.employee.name %></td>
+            <td><%= nomination.employee.fname %> <%= nomination.employee.lname %></td>
             <td><%= nomination.reason %></td>
             <td><%= nomination.nominator %></td>
             </td>
