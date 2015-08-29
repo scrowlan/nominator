@@ -25,8 +25,8 @@ class EmployeeUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
-  # process :quality => 70
+  process :resize_to_fit   => [800, 1200]
+  process :quality => 50
   #
   # def scale(width, height)
   #   # do something
