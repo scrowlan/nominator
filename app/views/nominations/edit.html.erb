@@ -1,6 +1,27 @@
 <h1>Editing nomination</h1>
 
-<%= render 'form' %>
+<%= form_for([@nomination, @employee]) do |f| %>
+  <% if @nomination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nomination.errors.count, "error") %> prohibited this nomination from being saved:</h2>
 
-<%= link_to 'Show', @nomination %> |
-<%= link_to 'Back', nominations_path %>
+      <ul>
+      <% @nomination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_field :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :nominator %><br>
+    <%= f.text_field :nominator %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
