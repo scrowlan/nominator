@@ -25,7 +25,7 @@ class NominationsController < ApplicationController
   # POST /nominations.json
   def create
     @nomination = Nomination.new(nomination_params)
-    @nomination.employee = Employee.find(params[:employee_id])
+    @nomination.employee = Employee.friendly.find(params[:employee_id])
 
     respond_to do |format|
       if @nomination.save

@@ -120,6 +120,8 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     haml (4.0.6)
       tilt
     haml-rails (0.5.3)
@@ -224,6 +226,7 @@ DEPENDENCIES
   carrierwave_direct
   coffee-rails (~> 4.0.0)
   fog
+  friendly_id (~> 5.1.0)
   haml-rails (~> 0.4)
   jbuilder (~> 2.0)
   jquery-rails
