@@ -6,8 +6,16 @@ class Employee < ActiveRecord::Base
 
   mount_uploader :employee_image, EmployeeUploader
 
+  before_destroy :destroy_nominations
+
   def full_name
     "#{fname} #{lname}"
   end
+
+  private
+  
+    def destroy_nominations
+     self.nominations.delete_all   
+    end
   
 end

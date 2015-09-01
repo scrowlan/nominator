@@ -15,11 +15,13 @@
 
       <tbody>
         <% @nominations.each do |nomination| %>
-          <tr>
-            <td><%= nomination.employee.fname %> <%= nomination.employee.lname %></td>
-            <td><%= nomination.reason %></td>
-            <td><%= nomination.nominator %></td>
-          </tr>
+          <% if nomination.employee_id != nil %>  
+            <tr>
+              <td><%= nomination.employee.fname %> <%= nomination.employee.lname %></td>
+              <td><%= nomination.reason %></td>
+              <td><%= nomination.nominator %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
