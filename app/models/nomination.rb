@@ -1,4 +1,4 @@
 class Nomination < ActiveRecord::Base
-  belongs_to :employee
+  belongs_to :employee, dependent: :delete
 
 end
