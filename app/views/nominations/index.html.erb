@@ -10,16 +10,18 @@
           <th>Nominee</th>
           <th>Reason</th>
           <th>Nominator</th>
+          <th>Date</th>
         </tr>
       </thead>
 
       <tbody>
         <% @nominations.each do |nomination| %>
-          <% if nomination.employee_id != nil %>  
+          <% if nomination.employee_id != nil %>
             <tr>
               <td><%= nomination.employee.fname %> <%= nomination.employee.lname %></td>
               <td><%= nomination.reason %></td>
               <td><%= nomination.nominator %></td>
+              <td><%= nomination.created_at.to_date.strftime("%b %d") %></td>
             </tr>
           <% end %>
         <% end %>
