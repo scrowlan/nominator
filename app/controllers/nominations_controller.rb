@@ -4,7 +4,7 @@ class NominationsController < ApplicationController
   # GET /nominations
   # GET /nominations.json
   def index
-    @nominations = Nomination.all
+    @nominations = Nomination.all.reverse
   end
 
   # GET /nominations/1
@@ -29,7 +29,7 @@ class NominationsController < ApplicationController
 
     respond_to do |format|
       if @nomination.save
-        format.html { redirect_to root_path, notice: 'Nomination was successfully created.' }
+        format.html { redirect_to nominations_path, notice: 'Nomination was successfully created.' }
         format.json { render :show, status: :created, location: @nomination }
       else
         format.html { render :new }
