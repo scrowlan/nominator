@@ -5,6 +5,10 @@ class NominationsController < ApplicationController
   # GET /nominations.json
   def index
     @nominations = Nomination.all.reverse
+    respond_to do |format|
+      format.json { render json: @nominations }
+      format.html { @nominations }
+    end
   end
 
   # GET /nominations/1
