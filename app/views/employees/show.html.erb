@@ -34,9 +34,8 @@
       </thead>
 
       <tbody>
-      <% @nominations.each_with_index do |nomination, index| %>
+      <% @nominations.each do |nomination| %>
         <tr>
-          <td><%= index + 1 %></td>
           <td><%= nomination.reason %></td>
           <td><%= nomination.nominator %></td>
         </tr>
