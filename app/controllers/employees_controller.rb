@@ -6,6 +6,14 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.order(:lname)
+    respond_to do |format|
+      format.json { render json: @employees }
+      format.html { @employees }
+    end
+  end
+
+  def count
+    @employees = Employee.all
   end
 
   # GET /employees/1
