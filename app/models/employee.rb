@@ -12,6 +12,11 @@ class Employee < ActiveRecord::Base
     "#{fname} #{lname}"
   end
 
+  def all_nominations
+    all_nominations = Nomination.where(:employee_id => id)
+    
+  end
+
   private
   
     def destroy_nominations

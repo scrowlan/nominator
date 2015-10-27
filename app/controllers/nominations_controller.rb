@@ -66,6 +66,12 @@ class NominationsController < ApplicationController
     end
   end
 
+  def count_by_employee(employee_id)
+
+    @count_by_employee = Nomination.where(employee_id: params[:employee_id]).count
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_nomination
