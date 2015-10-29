@@ -9,16 +9,20 @@ class Employee < ActiveRecord::Base
   before_destroy :destroy_nominations
 
   def as_json(options={})
-    super(:only => [:fname,:lname,:id],
-      :methods => [:count_by_employee,:full_name]
-      )
+    if count_by_employee != 0
+      super(:only => [:fname,:lname,:id],
+        :methods => [:count_by_employee,:full_name]
+        )
+    else
+      super(:only => [:fname,:lname,:id])
+    end
   end
 
   def count_by_employee
-
     @count_by_employee = Nomination.where(employee_id: id, :created_at => '2015-10-07'.to_date.beginning_of_day..Time.now).count
 
   end 
+
 
   def full_name
     "#{fname} #{lname}"
