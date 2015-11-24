@@ -12,7 +12,7 @@ class Nomination < ActiveRecord::Base
 
   def count_by_employee
 
-    @count_by_employee = Nomination.where(employee_id: employee_id, :created_at => '2015-10-07'.to_date.beginning_of_day..Time.now).count
+    @count_by_employee = Nomination.where(employee_id: employee_id, :created_at => '2015-11-23'.to_date.beginning_of_day..Time.now).count
 
   end
 
