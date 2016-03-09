@@ -4,7 +4,7 @@ class NominationsController < ApplicationController
   # GET /nominations
   # GET /nominations.json
   def index
-    @nominations = Nomination.where(:created_at => '2016-01-20'.to_date.beginning_of_day..Time.now).reverse
+    @nominations = Nomination.where(:created_at => '2016-03-09'.to_date.beginning_of_day..Time.now).reverse
     respond_to do |format|
       format.json { render json: @nominations }
       format.html { @nominations }
@@ -59,6 +59,7 @@ class NominationsController < ApplicationController
   # DELETE /nominations/1
   # DELETE /nominations/1.json
   def destroy
+    @nomination = Nomination.find(params[:id])
     @nomination.destroy
     respond_to do |format|
       format.html { redirect_to nominations_url, notice: 'Nomination was successfully destroyed.' }
