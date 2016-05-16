@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= f.invisible_captcha :subtitle %>
+
   <div class="form-group">
     <%= f.label :reason %><br>
     <%= f.text_area :reason, class: "form-control" %>

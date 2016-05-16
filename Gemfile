@@ -32,11 +32,14 @@ gem 'coffee-rails', '~> 4.0.0'
 #Carrierwave for image uploading
 gem 'carrierwave'
 
+#invisible captcha to cut down spam
+gem 'invisible_captcha'
+
 #Fog for S3 integration
 gem 'fog'
 
 #rmagick for easy thumbnailing
-gem 'rmagick', :require => 'RMagick'
+gem 'rmagick', '2.14.0', :require => 'RMagick'
 
 #to upload directly to S3
 gem 'carrierwave_direct'
