@@ -1,6 +1,7 @@
 class NominationsController < ApplicationController
   before_action :set_nomination, only: [:show, :edit, :update, :destroy]
-  invisible_captcha only: [:create, :update]
+  invisible_captcha only: [:create, :update], honeypot: :subtitle
+  
   # GET /nominations
   # GET /nominations.json
   def index
