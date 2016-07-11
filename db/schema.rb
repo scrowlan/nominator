@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829155405) do
+ActiveRecord::Schema.define(version: 20160708184907) do
+
+  create_table "activities", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "employees", force: true do |t|
     t.string   "employee_image"
@@ -38,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150829155405) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "nominations", force: true do |t|
-    t.text     "reason"
+    t.text     "reason",      null: false
     t.string   "nominator"
     t.datetime "created_at"
     t.datetime "updated_at"
