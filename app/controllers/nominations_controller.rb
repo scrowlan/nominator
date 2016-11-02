@@ -5,7 +5,7 @@ class NominationsController < ApplicationController
   # GET /nominations
   # GET /nominations.json
   def index
-    @nominations = Nomination.where(:created_at => '2016-08-10'.to_date.beginning_of_day..Time.now).reverse
+    @nominations = Nomination.where(:created_at => '2016-11-02'.to_date.beginning_of_day..Time.now).reverse
     respond_to do |format|
       format.json { render json: @nominations }
       format.html { @nominations }
